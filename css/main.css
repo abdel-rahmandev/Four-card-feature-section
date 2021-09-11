@@ -1,0 +1,178 @@
+/* Start Global Rules */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  background-color: hsl(0, 0%, 98%);
+}
+main {
+  padding: 30px;
+}
+/* End Global Rules */
+
+/* Start Card Feature */
+.cards-container {
+  width: 1100px;
+  max-width: 100%;
+  margin: 70px auto;
+  text-align: center;
+}
+.cards-container h1 {
+  font-weight: 200;
+  font-size: 36px;
+  color: hsl(234, 12%, 34%);
+}
+.cards-container h2 {
+  font-size: 36px;
+  font-weight: 600;
+  color: hsl(234, 12%, 34%);
+}
+.cards-container > p {
+  color: hsl(229, 6%, 66%);
+  font-weight: 400;
+  max-width: 500px;
+  margin: 10px auto 0;
+}
+.cards-container .feats {
+  display: grid;
+  grid-template-areas:
+    "card1 card2 card4"
+    ". card3 .";
+  gap: 30px;
+  margin-top: 60px;
+}
+.feats .feat {
+  padding: 30px;
+  box-shadow: 0px 15px 15px 5px hsla(240, 100%, 50%, 0.1);
+  border-radius: 10px;
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+}
+.feats .feat::before {
+  content: "";
+  width: 100%;
+  height: 4px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.feats .feat:nth-child(1)::before {
+  background-color: hsl(180, 62%, 55%);
+}
+.feats .feat:nth-child(1) {
+  grid-area: card1;
+  transform: translateY(50%);
+}
+.feats .feat:nth-child(2)::before {
+  background-color: hsl(0, 78%, 62%);
+}
+.feats .feat:nth-child(2) {
+  grid-area: card2;
+}
+.feats .feat:nth-child(3)::before {
+  background-color: hsl(34, 97%, 64%);
+}
+.feats .feat:nth-child(3) {
+  grid-area: card3;
+}
+.feats .feat:nth-child(4)::before {
+  background-color: hsl(212, 86%, 64%);
+}
+.feats .feat:nth-child(4) {
+  grid-area: card4;
+  transform: translateY(50%);
+}
+.feat h3 {
+  color: hsl(234, 12%, 34%);
+  font-weight: 600;
+  font-size: 20px;
+}
+.feat p {
+  color: hsl(229, 6%, 66%);
+  font-weight: 400;
+  font-size: 13px;
+  margin: 10px 0 40px;
+  padding-right: 20px;
+}
+.feat img {
+  display: block;
+  margin-left: auto;
+}
+@media (max-width: 1024px) {
+  .cards-container .feats {
+    grid-template-areas: "card1" "card2" "card3" "card4";
+  }
+  .cards-container h1,
+  .cards-container h2 {
+    font-size: 24px;
+  }
+  .feats .feat:nth-child(1),
+  .feats .feat:nth-child(4) {
+    transform: translateY(0);
+  }
+  .feat p {
+    padding-right: 0;
+  }
+}
+/* End Card Feature */
+
+/* Start Footer */
+footer {
+  text-align: center;
+  min-height: 50px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+footer::before {
+  content: "";
+  background-image: linear-gradient(
+    to right,
+    hsl(180, 62%, 55%) 25%,
+    hsl(0, 78%, 62%) 25%,
+    hsl(0, 78%, 62%) 50%,
+    hsl(34, 97%, 64%) 50%,
+    hsl(34, 97%, 64%) 75%,
+    hsl(212, 86%, 64%) 75%
+  );
+  width: 100%;
+  height: 4px;
+  position: absolute;
+  top: -4px;
+  left: 0;
+}
+footer .content {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  max-width: 500px;
+  margin: 0 auto;
+  font-weight: bold;
+  font-size: 14px;
+}
+footer span {
+  padding: 5px;
+  color: hsl(234, 12%, 34%);
+}
+footer span:first-child {
+  margin-left: -5px;
+}
+footer a {
+  color: hsl(212, 86%, 64%);
+  text-decoration: none;
+  transition: 0.3s;
+}
+footer a:hover {
+  text-decoration: underline;
+  color: hsl(180, 62%, 55%);
+}
+/* End Footer */
